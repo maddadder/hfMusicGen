@@ -17,4 +17,4 @@ transformers
 xformers
 demucs
 librosa
-gradio
+gradio_client==0.2.6
