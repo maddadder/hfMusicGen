@@ -12,3 +12,16 @@ conda activate MusicGen
 python app.py --listen 0.0.0.0
 
 ```
+
+
+2. Deploy as a service
+
+```bash
+chmod +x app.sh
+sudo cp hfmusicgen.service /etc/systemd/system/hfmusicgen.service
+sudo systemctl daemon-reload
+sudo systemctl start hfmusicgen
+sudo systemctl restart hfmusicgen
+sudo systemctl enable hfmusicgen
+sudo systemctl status hfmusicgen
+```
