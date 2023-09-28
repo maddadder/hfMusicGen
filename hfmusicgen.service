@@ -1,0 +1,14 @@
+# /etc/systemd/system/hfmusicgen.service
+
+[Unit]
+Description=hfMusicGen
+After=network.target
+
+[Service]
+ExecStart=source ~/miniconda3/bin/activate MusicGen && ~/miniconda3/envs/MusicGen/bin/python ~/git3/hfMusicGen/app.py --listen 0.0.0.0
+WorkingDirectory=~/git3/hfMusicGen
+Restart=always
+User=alice
+
+[Install]
+WantedBy=multi-user.target
